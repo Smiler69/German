@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprechen Sie Deutsch? Learn German — Linguavita</title>
+<meta name="description" content="Learn German with 400 words, verb conjugations, listening exercises and spaced repetition. One-time purchase, yours forever.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15120D;
+    --cream:#F2EFE9;
+    --ivory:#FCFBF8;
+    --black:#1A1A1A;
+    --black-deep:#0D0D0D;
+    --gold:#C9A227;
+    --gold-light:#E8CE73;
+    --gold-pale:#F5EBC4;
+    --red:#A8201A;
+    --red-deep:#7A1612;
+    --red-light:#C9453F;
+    --text-light:#5C5650;
+    --border:rgba(201,162,39,0.25);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;background:var(--black);position:relative;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:3rem 2rem;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(201,162,39,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(168,32,26,0.18) 0%, transparent 55%);
+    pointer-events:none;
+  }
+  .hero-ornament{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--gold);font-size:0.8rem;letter-spacing:0.4em;text-transform:uppercase;
+    margin-bottom:1.5rem;opacity:0.75;
+  }
+  .hero-flag{font-size:clamp(2.5rem,8vw,4.5rem);margin-bottom:1rem;filter:drop-shadow(0 4px 20px rgba(0,0,0,0.3));}
+  .hero-title{
+    font-family:'Playfair Display',serif;font-size:clamp(2.6rem,8.5vw,5.6rem);
+    color:white;text-align:center;line-height:1.05;font-weight:900;margin-bottom:0.5rem;
+  }
+  .hero-title em{font-style:italic;color:var(--gold-light);}
+  .hero-subtitle{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(1rem,3vw,1.4rem);color:rgba(255,255,255,0.55);
+    letter-spacing:0.08em;margin-bottom:2rem;text-align:center;
+  }
+  .hero-tagline{
+    font-family:'Playfair Display',serif;font-style:italic;
+    font-size:clamp(1.1rem,3.5vw,1.7rem);color:var(--gold-light);
+    text-align:center;max-width:600px;line-height:1.4;margin-bottom:2.5rem;
+  }
+  .hero-cta-group{display:flex;flex-direction:column;align-items:center;gap:0.8rem;margin-bottom:2rem;}
+  .btn-hero-primary{
+    display:inline-flex;align-items:center;gap:0.6rem;
+    background:var(--red);color:white;border:2px solid var(--red);
+    font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;
+    letter-spacing:0.15em;text-transform:uppercase;
+    padding:1rem 2.2rem;border-radius:2px;text-decoration:none;
+    transition:all 0.3s;cursor:pointer;
+  }
+  .btn-hero-primary:hover{background:var(--red-deep);border-color:var(--red-deep);}
+  .btn-hero-secondary{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    background:transparent;color:rgba(255,255,255,0.6);
+    border:1px solid rgba(255,255,255,0.2);
+    font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;
+    padding:0.7rem 1.5rem;border-radius:2px;text-decoration:none;transition:all 0.3s;
+  }
+  .btn-hero-secondary:hover{color:white;border-color:rgba(255,255,255,0.5);}
+  .hero-stats{display:flex;gap:2.5rem;margin-top:1rem;flex-wrap:wrap;justify-content:center;}
+  .hero-stat{text-align:center;}
+  .hero-stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold-light);display:block;line-height:1;}
+  .hero-stat-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:0.3rem;}
+  .price-hint{margin-top:0.5rem;font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:rgba(255,255,255,0.35);letter-spacing:0.05em;}
+  .scroll-hint{
+    position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+    color:rgba(255,255,255,0.2);font-size:0.65rem;letter-spacing:0.2em;
+    text-transform:uppercase;animation:bounce 2s infinite;
+  }
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+
+  /* SECTION SHARED */
+  .section{padding:5rem 2rem;}
+  .section-inner{max-width:700px;margin:0 auto;}
+  .section-label{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,2.8rem);color:var(--black);line-height:1.15;margin-bottom:1rem;}
+  .section-title em{font-style:italic;color:var(--red);}
+  .section-body{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-light);line-height:1.7;}
+  .divider{text-align:center;color:var(--gold);font-size:1rem;letter-spacing:0.6em;opacity:0.4;margin:1.5rem 0;}
+
+  /* GERMANY FACTS */
+  .facts-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:1px;background:var(--border);border:1px solid var(--border);
+    border-radius:3px;overflow:hidden;margin:2.5rem 0;
+  }
+  .fact-cell{background:var(--ivory);padding:1.4rem 1.2rem;text-align:center;}
+  .fact-icon{font-size:1.6rem;margin-bottom:0.5rem;display:block;}
+  .fact-title{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--black);margin-bottom:0.3rem;}
+  .fact-body{font-size:0.78rem;color:var(--text-light);line-height:1.4;}
+
+  /* FEATURES */
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem;}
+  .feature-card{border:1px solid var(--border);background:var(--ivory);border-radius:3px;padding:1.4rem;transition:box-shadow 0.2s;}
+  .feature-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+  .feature-icon{font-size:1.5rem;margin-bottom:0.6rem;}
+  .feature-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--black);margin-bottom:0.4rem;}
+  .feature-body{font-size:0.8rem;color:var(--text-light);line-height:1.5;}
+
+  /* WORDS YOU KNOW ALREADY */
+  .word-table{border:1px solid var(--border);border-radius:3px;overflow:hidden;margin:2rem 0;}
+  .word-header{
+    display:grid;grid-template-columns:1fr 1fr;background:var(--black);padding:0.7rem 1rem;
+    font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
+  }
+  .word-header span:first-child{color:var(--gold);}
+  .word-header span:last-child{color:rgba(255,255,255,0.5);text-align:right;}
+  .word-row{
+    display:grid;grid-template-columns:1fr 1fr;padding:0.65rem 1rem;
+    border-bottom:1px solid var(--border);background:var(--ivory);align-items:center;font-size:0.85rem;
+  }
+  .word-row:last-child{border-bottom:none;}
+  .word-row:nth-child(even){background:var(--cream);}
+  .word-de{font-family:'Playfair Display',serif;color:var(--black);}
+  .word-en{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);text-align:right;}
+
+  /* APP MOCKUP */
+  .app-mockup{
+    border:2px solid var(--gold);border-radius:6px;overflow:hidden;
+    box-shadow:0 12px 50px rgba(0,0,0,0.25);margin:2.5rem 0;background:var(--black);
+  }
+  .mockup-bar{background:var(--black-deep);padding:0.7rem 1rem;display:flex;align-items:center;gap:0.5rem;}
+  .mockup-dot{width:10px;height:10px;border-radius:50%;}
+  .mockup-title{font-family:'Playfair Display',serif;font-style:italic;font-size:0.8rem;color:var(--gold);margin-left:auto;margin-right:auto;}
+  .mockup-body{padding:1.5rem;}
+  .mockup-card{background:var(--ivory);border:1px solid var(--border);border-radius:4px;padding:2rem;text-align:center;margin-bottom:1rem;}
+  .mockup-word{font-family:'Playfair Display',serif;font-size:2rem;color:var(--black);margin-bottom:0.3rem;}
+  .mockup-ipa{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);font-size:0.9rem;margin-bottom:0.8rem;}
+  .mockup-cat{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+  .mockup-tip{
+    background:rgba(201,162,39,0.1);border:1px solid rgba(201,162,39,0.3);
+    border-radius:3px;padding:0.5rem 0.8rem;font-size:0.75rem;color:var(--black);text-align:left;line-height:1.4;margin-top:0.8rem;
+  }
+  .mockup-tip strong{color:var(--gold);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:0.2rem;}
+  .mockup-tabs{display:flex;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;}
+  .mockup-tab{flex:1;padding:0.5rem 0.2rem;text-align:center;font-size:0.55rem;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
+  .mockup-tab.active{background:var(--red);color:white;}
+
+  /* PRICING */
+  .pricing{background:var(--black);padding:5rem 2rem;}
+  .pricing-inner{max-width:620px;margin:0 auto;text-align:center;}
+  .pricing .section-title{color:white;}
+  .pricing .section-label{color:var(--gold);}
+  .pricing .section-body{color:rgba(255,255,255,0.5);}
+  .price-card{
+    background:var(--ivory);border:2px solid var(--gold);border-radius:3px;
+    padding:3rem 2.5rem;margin-top:3rem;position:relative;box-shadow:0 8px 40px rgba(201,162,39,0.15);
+  }
+  .price-badge{
+    position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:var(--black-deep);
+    font-family:'Jost',sans-serif;font-size:0.65rem;font-weight:500;
+    letter-spacing:0.2em;text-transform:uppercase;padding:0.3rem 1.2rem;border-radius:0 0 3px 3px;
+  }
+  .price-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--red);margin-bottom:0.3rem;}
+  .price-title em{font-style:italic;}
+  .price-desc{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);font-size:1rem;margin-bottom:2rem;}
+  .price-dual{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;}
+  .price-option{display:flex;flex-direction:column;align-items:center;gap:0.6rem;flex:1;min-width:180px;}
+  .price-divider-or{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--text-light);font-size:1.1rem;flex-shrink:0;}
+  .price-amount{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--red);font-weight:700;line-height:1;margin-bottom:0.1rem;}
+  .price-amount span{font-size:1.4rem;vertical-align:super;font-weight:400;}
+  .price-flag{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);}
+  .price-once{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-light);margin-bottom:2rem;display:block;}
+  .price-features{list-style:none;margin-bottom:2.5rem;text-align:left;}
+  .price-features li{
+    font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--red);
+    padding:0.5rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.7rem;
+  }
+  .price-features li:last-child{border-bottom:none;}
+  .price-features li::before{content:'✦';color:var(--gold);font-size:0.7rem;flex-shrink:0;}
+  .btn-buy{
+    display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;width:100%;
+    font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;
+    padding:1.1rem 2rem;border-radius:2px;text-decoration:none;transition:all 0.3s;cursor:pointer;border:2px solid transparent;
+  }
+  .btn-buy-gbp{background:var(--red);color:white;border-color:var(--red);}
+  .btn-buy-gbp:hover{background:var(--red-deep);border-color:var(--red-deep);}
+  .btn-buy-eur{background:#3D4A3D;color:white;border-color:#3D4A3D;}
+  .btn-buy-eur:hover{background:#2D372D;border-color:#2D372D;}
+  .price-guarantee{margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:var(--text-light);}
+  .price-guarantee::before{content:'🔒 ';}
+
+  /* FAQ */
+  .faq{padding:5rem 2rem;max-width:700px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--border);padding:1.5rem 0;}
+  .faq-q{font-family:'Playfair Display',serif;font-size:1rem;color:var(--red);margin-bottom:0.6rem;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;}
+  .faq-a{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text-light);line-height:1.6;}
+
+  /* FOOTER */
+  footer{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);background:var(--black-deep);}
+  .footer-logo{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--gold);margin-bottom:0.5rem;}
+  .footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin:0.8rem 0;}
+  .footer-links a{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-copy{font-size:0.7rem;color:rgba(255,255,255,0.2);letter-spacing:0.05em;}
+
+  @media(max-width:500px){
+    .price-amount{font-size:2.8rem;}
+    .facts-grid{grid-template-columns:1fr 1fr;}
+    .price-dual{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ornament">✦ &nbsp; Linguavita — Language for Life &nbsp; ✦</div>
+  <div class="hero-flag">🇩🇪</div>
+  <h1 class="hero-title">Sprechen Sie<br><em>Deutsch</em>?</h1>
+  <p class="hero-subtitle">German · Germany, Austria &amp; Switzerland</p>
+  <p class="hero-tagline">"The language of poets and thinkers —<br>precise, logical, and deeply rewarding to learn."</p>
+  <div class="hero-cta-group">
+    <a href="#pricing" class="btn-hero-primary">Get the app — from £8.50</a>
+    <a href="#features" class="btn-hero-secondary">See what's inside ↓</a>
+  </div>
+  <p class="price-hint">One-time purchase · No subscription · Yours forever</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num">400</span><span class="hero-stat-label">Words</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">12</span><span class="hero-stat-label">Verbs</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">42</span><span class="hero-stat-label">Phrases</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">7</span><span class="hero-stat-label">Study Modes</span></div>
+  </div>
+  <div class="scroll-hint">scroll to explore ↓</div>
+</section>
+
+<!-- WHY GERMAN -->
+<section class="section" style="background:var(--ivory);">
+  <div class="section-inner">
+    <p class="section-label">Why learn German?</p>
+    <h2 class="section-title">More useful than<br>you might <em>think</em>.</h2>
+    <p class="section-body">German is the most widely spoken native language in the European Union — spoken by over 100 million people across Germany, Austria, Switzerland, Liechtenstein and parts of Belgium and Italy. It's Europe's largest economy's language, and a gateway to philosophy, music, engineering and literature that shaped the modern world.</p>
+    <div class="divider">· · · ✦ · · ·</div>
+    <p class="section-body">German has a reputation for being difficult — but it's actually remarkably logical. Once you understand the patterns, the grammar makes sense in a way that English often doesn't. This app builds that understanding from day one, with clear notes on the patterns and quirks that make German, German.</p>
+
+    <div class="facts-grid">
+      <div class="fact-cell">
+        <span class="fact-icon">🎼</span>
+        <div class="fact-title">Music</div>
+        <div class="fact-body">Bach, Beethoven, Brahms — the language of classical music's greatest names</div>
+      </div>
+      <div class="fact-cell">
+        <span class="fact-icon">🏰</span>
+        <div class="fact-title">Fairy Tales</div>
+        <div class="fact-body">Neuschwanstein inspired Disney — and the Brothers Grimm wrote in German</div>
+      </div>
+      <div class="fact-cell">
+        <span class="fact-icon">🍺</span>
+        <div class="fact-title">Beer Culture</div>
+        <div class="fact-body">Biergartens, Oktoberfest, and 1,500+ years of brewing tradition</div>
+      </div>
+      <div class="fact-cell">
+        <span class="fact-icon">💡</span>
+        <div class="fact-title">Ideas</div>
+        <div class="fact-body">Kant, Nietzsche, Einstein — German shaped how the world thinks</div>
+      </div>
+    </div>
+
+    <p class="section-label" style="margin-top:2rem;">Words you already half-know</p>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--black);margin-bottom:1rem;">German has snuck into English more than you'd think</h3>
+    <div class="word-table">
+      <div class="word-header"><span>German</span><span>English</span></div>
+      <div class="word-row"><span class="word-de">Kindergarten</span><span class="word-en">children's garden</span></div>
+      <div class="word-row"><span class="word-de">Wanderlust</span><span class="word-en">desire to travel</span></div>
+      <div class="word-row"><span class="word-de">Schadenfreude</span><span class="word-en">joy at another's misfortune</span></div>
+      <div class="word-row"><span class="word-de">Doppelgänger</span><span class="word-en">double / lookalike</span></div>
+      <div class="word-row"><span class="word-de">Zeitgeist</span><span class="word-en">spirit of the times</span></div>
+      <div class="word-row"><span class="word-de">Rucksack</span><span class="word-en">backpack</span></div>
+      <div class="word-row"><span class="word-de">Angst</span><span class="word-en">fear / anxiety</span></div>
+    </div>
+    <p class="section-body" style="font-size:0.88rem;">You're starting closer to fluency than you think.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <p class="section-label">What's inside</p>
+    <h2 class="section-title">Seven ways to<br><em>learn and practise</em></h2>
+
+    <div class="app-mockup">
+      <div class="mockup-bar">
+        <div class="mockup-dot" style="background:#ff5f57;"></div>
+        <div class="mockup-dot" style="background:#ffbd2e;"></div>
+        <div class="mockup-dot" style="background:#28c940;"></div>
+        <div class="mockup-title">🇩🇪 Sprechen Sie Deutsch? — Linguavita</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mockup-card">
+          <div class="mockup-cat">Time</div>
+          <div class="mockup-word">Feierabend</div>
+          <div class="mockup-ipa">/ˈfaɪɐʔaːbənt/</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:#888;">Endlich Feierabend!</div>
+          <div class="mockup-tip"><strong>💡 Grammar Tip</strong>A wonderfully German concept — the specific joy of finishing work for the day. No direct English equivalent.</div>
+        </div>
+        <div class="mockup-tabs">
+          <div class="mockup-tab active">⭐ Daily</div>
+          <div class="mockup-tab">Cards</div>
+          <div class="mockup-tab">Sentences</div>
+          <div class="mockup-tab">🎧 Listen</div>
+          <div class="mockup-tab">Verbs</div>
+          <div class="mockup-tab">Quiz</div>
+          <div class="mockup-tab">Progress</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⭐</div>
+        <div class="feature-title">Daily 10</div>
+        <div class="feature-body">Ten words chosen for you each day — prioritising due reviews, then unseen words, then weak spots. Five minutes a day builds a real habit.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🃏</div>
+        <div class="feature-title">Flashcards + SRS</div>
+        <div class="feature-body">400 words with IPA pronunciation, example sentences and grammar tips. Spaced repetition schedules your reviews automatically.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <div class="feature-title">Sentence Cards</div>
+        <div class="feature-body">Fill-in-the-blank cards built from real example sentences. See the word in context, not just in isolation.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎧</div>
+        <div class="feature-title">Listen Mode</div>
+        <div class="feature-body">Hear German spoken aloud, then pick the correct meaning. Trains your ear for compound words and tricky sounds.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📖</div>
+        <div class="feature-title">Verb Conjugations</div>
+        <div class="feature-body">12 essential verbs — present, past and future — with full conjugation tables and notes on separable verbs and irregular forms.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-title">Quiz + Progress</div>
+        <div class="feature-body">Test yourself with a four-option quiz, track mastery level for every word, earn achievements, and back up your progress as a file.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOCABULARY SAMPLE -->
+<section class="section" style="background:var(--ivory);">
+  <div class="section-inner">
+    <p class="section-label">400 words across 15 categories</p>
+    <h2 class="section-title">Essential vocabulary<br><em>built around real life</em></h2>
+    <p class="section-body">From ordering a Brezel at a Biergarten to navigating the Autobahn — the vocabulary is chosen for what you actually need, with grammar notes explaining the logic behind German's famous compound nouns and cases.</p>
+    <div class="divider">· · · ✦ · · ·</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;">
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Actions (40)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Essentials (36)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Descriptions (34)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Food &amp; Drink (30)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Travel (29)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Places (28)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">People (26)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Numbers (25)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Time (25)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Shopping (25)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Nature (25)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Home (22)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Health (19)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Emotions (19)</span>
+      <span style="background:rgba(168,32,26,0.08);border:1px solid rgba(168,32,26,0.25);color:var(--red);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;">Weather (17)</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-inner">
+    <p class="section-label">Simple pricing</p>
+    <h2 class="section-title">One price.<br><em>Yours forever.</em></h2>
+    <p class="section-body">No subscription. No monthly fees. Pay once and the app is yours — with all your progress saved in your browser, forever.</p>
+
+    <div class="price-card">
+      <div class="price-badge">🇩🇪 German · Complete Edition</div>
+      <h3 class="price-title">Sprechen Sie <em>Deutsch</em>?</h3>
+      <p class="price-desc">The complete Linguavita German app — 400 words, 12 verbs, 42 phrases, 7 study modes.</p>
+
+      <div class="price-dual">
+        <div class="price-option">
+          <div class="price-amount"><span>£</span>8.50</div>
+          <div class="price-flag">🇬🇧 British pounds</div>
+          <a href="GUMROAD_GBP_LINK" class="btn-buy btn-buy-gbp">Buy in GBP →</a>
+        </div>
+        <div class="price-divider-or">or</div>
+        <div class="price-option">
+          <div class="price-amount"><span>€</span>9.99</div>
+          <div class="price-flag">🇪🇺 Euros</div>
+          <a href="GUMROAD_EUR_LINK" class="btn-buy btn-buy-eur">Buy in EUR →</a>
+        </div>
+      </div>
+
+      <span class="price-once">One-time payment · Instant download</span>
+
+      <ul class="price-features">
+        <li>400 German vocabulary words</li>
+        <li>Grammar tips on cases, separable verbs &amp; compounds</li>
+        <li>12 verb conjugation tables (present, past, future)</li>
+        <li>42 real-life phrases for travellers</li>
+        <li>Spaced repetition — smarter than plain flashcards</li>
+        <li>Listen Mode — train your ear for German sounds</li>
+        <li>Works offline in your browser</li>
+        <li>Progress saved locally — no account needed</li>
+        <li>Backup and restore your progress anytime</li>
+      </ul>
+
+      <div class="price-dual">
+        <div class="price-option">
+          <a href="GUMROAD_GBP_LINK" class="btn-buy btn-buy-gbp">Buy in GBP — £8.50 →</a>
+        </div>
+        <div class="price-option">
+          <a href="GUMROAD_EUR_LINK" class="btn-buy btn-buy-eur">Buy in EUR — €9.99 →</a>
+        </div>
+      </div>
+
+      <p class="price-guarantee">30-day money-back guarantee. If you're not happy, just email us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div class="faq">
+  <p class="section-label" style="text-align:center;">Common questions</p>
+  <h2 class="section-title" style="text-align:center;margin-bottom:2rem;">FAQ</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Is German really that hard to learn?</div>
+    <div class="faq-a">German has a reputation for difficulty, mostly because of cases and compound nouns — but the grammar is actually very logical and consistent once the patterns click. This app explains the logic clearly, with grammar tips built into every flashcard.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How does it work after I buy?</div>
+    <div class="faq-a">You download a single HTML file from Gumroad. Open it in any browser — Safari, Chrome, Firefox — and it runs entirely offline. No app store, no account, no internet needed after download. Your progress saves automatically in your browser.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Will my progress be saved if I close the browser?</div>
+    <div class="faq-a">Yes. Progress is saved to your browser's local storage automatically. It persists between sessions. You can also use the backup feature to download a save file — useful if you switch devices or browsers.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Does it work on iPhone and iPad?</div>
+    <div class="faq-a">Yes — it's built specifically to work on Safari for iOS. The speech features use the Web Speech API, which is well supported on modern Apple devices.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">I'm a complete beginner. Is this suitable for me?</div>
+    <div class="faq-a">Absolutely. The Daily 10 mode is designed for beginners — it introduces 10 new words a day with clear examples and grammar tips. You can go at your own pace.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What if I'm not happy with it?</div>
+    <div class="faq-a">Email us at contactus@linguavita.app within 30 days and we'll refund you in full, no questions asked.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Linguavita — Language for Life</div>
+  <div class="footer-links">
+    <a href="https://linguavita.app">Home</a>
+    <a href="https://french.linguavita.app">French</a>
+    <a href="https://portuguese.linguavita.app">Portuguese (BR)</a>
+    <a href="https://spanish.linguavita.app">Spanish</a>
+    <a href="mailto:contactus@linguavita.app">Contact</a>
+  </div>
+  <p class="footer-copy">© 2025 Linguavita · contactus@linguavita.app</p>
+</footer>
+
+</body>
+</html>
